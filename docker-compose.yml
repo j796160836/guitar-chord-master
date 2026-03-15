@@ -1,0 +1,15 @@
+services:
+  guitar-chord-master:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: guitar-chord-master-web
+    ports:
+      - "8080:80"
+    restart: always
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
